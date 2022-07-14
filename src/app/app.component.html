@@ -2,8 +2,12 @@
   <div class="row">
     <div class="col-xs-12">
       <h1 class="color">{{ appName }}</h1>
-      <input (input)="showInput($event)" class="form-control" />
+      <!-- event binding  -->
+      <!-- <input (input)="showInput($event)" class="form-control" /> -->
+      <!-- Two way data binding -->
+      <input [(ngModel)]="appName" class="form-control" />
       <br />
+      <!-- property binding -->
       <button
         class="btn btn-primary col-md-4"
         [disabled]="!enableButton"
