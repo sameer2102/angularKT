@@ -1,0 +1,36 @@
+<!--
+*ngIf - conditionally hide/show html elemnts on DOM, example with else
+*ngFor - to itrate block of html elments over array object
+
+ngSwitch
+-->
+
+
+<h1>Directives</h1>
+<br>
+<div class="container">
+  <!-- <div class="row">
+    <div class="col-xs-8">
+      <input type="text" class="form-control" placeholder="Add your Hobby" [(ngModel)]="hobby">
+      <p *ngIf="hobby !==''"> Thanks, You have added {{ hobby }} as your Hobby </p>
+    </div>
+  </div> -->
+  <div class="row">
+    <div class="col-xs-10">
+      <input type="text" class="form-control" placeholder="Add your Hobby" [(ngModel)]="hobby"><br>
+      <button class="btn btn-primary" (click)="addHobby()">Add Hobby</button>
+      <p *ngIf="hobbies.length > 0; else noHobby">You have added following as your Hobbies:</p>
+      <ng-template #noHobby>
+        <p>No Hobby added yet</p>
+      </ng-template>
+      <p *ngFor="let h of hobbies">
+        <!-- here we will show hobbies -->
+        {{h}} is your Hobby!!! <br>
+        <button>Nothing</button><br>
+        Some text
+      </p>
+    </div>
+  </div>
+
+</div>
+
