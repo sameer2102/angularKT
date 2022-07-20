@@ -3,6 +3,15 @@
 *ngFor - to itrate block of html elments over array object
 
 ngSwitch
+
+Property -
+ngStyle
+ngClass
+
+indexOf('') >-1
+let var1 = 'Angular' 
+var1.indexOf('Ang'); return => 0;
+var1.indexOf('ngu'); return => 1;
 -->
 
 
@@ -23,12 +32,15 @@ ngSwitch
       <ng-template #noHobby>
         <p>No Hobby added yet</p>
       </ng-template>
-      <p *ngFor="let h of hobbies">
-        <!-- here we will show hobbies -->
-        {{h}} is your Hobby!!! <br>
-        <button>Nothing</button><br>
-        Some text
-      </p>
+      <div *ngFor="let h of hobbies; let i=index">
+        <p [ngClass]="{'divWidth500':i%2==0, 'divWidth700':i%2==1 }" [ngStyle]="{'background-color': i%2==0 ? 'green' : 'black', 'color': h.indexOf('Chess') > -1 ? 'yellow' : 'red' }">
+          <!-- here we will show hobbies -->
+           {{h}} is your Hobby!!! <br>
+          <button>Nothing</button><br>
+          Some text
+        </p>
+      </div>
+      
     </div>
   </div>
 
