@@ -1,0 +1,10 @@
+<!-- Data From Parent to child -> We use Property binding and @Input
+Data From Child to Parent -> We use Envet Binding and @Output with EventEmitter object -->
+<h1>This is Parent!!</h1>
+<input type="text" [(ngModel)]="xyz">
+<br/>
+<input type="text" [(ngModel)]="familyName">
+<hr>
+Child Data: {{childData}}
+<hr>
+<app-child [xyzVariable]="xyz" [familyName]="familyName" (toParent)="fromChild($event)"></app-child>

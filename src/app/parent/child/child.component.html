@@ -1,0 +1,16 @@
+<div class="conatiner">
+  <div class="row">
+    <div class="col-xs-5">
+      <h2>This is child</h2>
+      XYZ : {{ xyzVariable }}
+      <br>
+      Family Name : {{ familyName }}
+    </div>
+    <div>
+      <input class="form-control" placeholder="Child Name" type="text" [(ngModel)]="childName">
+      <button class="btn btn-primary" (click)="sendDataToParent()">Send to Parent</button>
+    </div>
+  </div>
+</div>
+
+
